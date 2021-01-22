@@ -123,10 +123,10 @@ latest_packages(n = 10)
 ## `rm_latest_packages()`
 
 __Description__
-Works similarly to `rm_latest_packages()` excepts that it removes the packages instead of displaying them. 
+Works similarly to `latest_packages()` excepts that it removes the packages instead of displaying them. 
 
 __Parameters__
-Same as `since_packages()`
+Same as `latest_packages()`
 
 <!-- laaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaast -->
 
@@ -137,6 +137,28 @@ Packages Installation
 </h1>
 
 
+## `display_starred()`
+
+__Description__
+Display User's Github Starred Repositories.
+
+__Parameters__
+
+- `github_user` (str): the Github user name to look for
+- `n` (num): the number of the last starred repositories. Defaults to 5 in which case
+it will return the last 5 starred repositories. Note that if the  `onlyR` parameter
+is set to TRUE, you might get a lower number of starred repos due to filtering R from
+all the other languages.
+- `onlyR` (lgl): whether to fetch only R repositories, Default to FALSE
+
+
+```{r}
+
+display_starred('hadley', n = 20, onlyR = FALSE)
+
+
+```
+
 ## `install_starred_cran()`
 
 __Description__
@@ -144,7 +166,7 @@ Installs the latest CRAN-available R packages starred on Github.
 
 __Parameters__
 
-- `github_user` (str): the Github user name
+- `github_user` (str): the Github user name to look for
 - `n` (num): the last `n` starred repositories. Defaults to 5, in which case the function will look for the last 5 starred repositories, filter R from non-R repos and install them if available on CRAN.
 
 __Example__
@@ -165,7 +187,7 @@ __Description__
 
 __Parameters__
 
-- `github_user` (str): the Github user name
+- `github_user` (str): the Github user name to look for
 - `n` (num): the last `n` starred repositories. Defaults to 5, in which case the function will look for the last 5 starred repositories, filter R from non-R repos and install them
 - `upgrade` (str): whether to upgrade or not out of date packages. You can choose from 'always' or 'never'. Defaults to 'never'. For more info, see `install_github()` from the `remote` package.
 
