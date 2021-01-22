@@ -30,6 +30,8 @@ __Parameters__
 
 - `lib` (str): the directory where to display the packages. Defaults to the first element in `.libPaths()`
 
+__Example__
+
 ```{r}
 library(batata)
 today_packages()
@@ -40,7 +42,7 @@ today_packages()
 __Description__
 Removes all the packages installed the day the function is called. 
 
-__Parameters__:
+__Parameters__
 
 - `lib` (str): the directory where to remove the packages. Defaults to the first element in `.libPaths()`
 
@@ -53,6 +55,8 @@ Displays the packages installed _yesterday_.
 __Parameters__:
 
 - `lib` (str): the directory where to display the packages. Defaults to the first element in `.libPaths()`
+
+__Example__
 
 ```{r}
 yesterday_packages()
@@ -79,6 +83,7 @@ __Parameters__
 - `position` (str): whether to display the packages installed `at` that date, `before` or `after` that date.
 - `lib` (str): the directory where to display the packages. Defaults to the first element in `.libPaths()`
 
+__Example__
 
 ```{r}
 #packages installed after the first of January 2021
@@ -106,6 +111,7 @@ __Parameters__
 
 - `lib` (str): the directory where to display the packages. Defaults to the first element in `.libPaths()`
 
+__Example__
 
 ```{r}
 # 10 latest packages installed
