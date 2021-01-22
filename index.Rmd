@@ -130,7 +130,7 @@ Same as `since_packages()`
 
 <!-- laaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaast -->
 
-<hr style = "border: solid 3px #FF4E5C">
+<hr style = "border: solid 3px #FF4E5C; width:80%;">
 
 <h1 style = "color:#24BFA5; text-align:center;">
 Packages Installation 
