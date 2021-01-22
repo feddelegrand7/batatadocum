@@ -9,7 +9,9 @@ site: distill::distill_website
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Packages Removal
+<h1 style = "color:#24BFA5; text-align:center;">
+Packages Removal
+</h1>
 
 ## `fresh_start()`
 
@@ -126,7 +128,14 @@ Works similarly to `rm_latest_packages()` excepts that it removes the packages i
 __Parameters__
 Same as `since_packages()`
 
-# Packages Installation 
+<!-- laaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaast -->
+
+<hr style = "border: solid 3px #FF4E5C">
+
+<h1 style = "color:#24BFA5; text-align:center;">
+Packages Installation 
+</h1>
+
 
 ## `install_starred_cran()`
 
