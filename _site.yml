@@ -1,0 +1,12 @@
+name: "batatadocum"
+title: "batata"
+description: |
+  A Toolbox for Managing R Packages Installation and Removal.
+output_dir: "_site"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "Github"
+      href: https://github.com/feddelegrand7/batata
+output: distill::distill_article
