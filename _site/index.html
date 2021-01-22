@@ -2064,6 +2064,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <div class="nav-right">
 <a href="index.html">Home</a>
+<a href="installation.html">Packages Installation</a>
+<a href="removal.html">Packages Removal</a>
 <a href="https://github.com/feddelegrand7/batata">Github</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
@@ -2082,174 +2084,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <div class="d-article">
-<h1 style="color:#24BFA5; text-align:center;">
-Packages Removal
-</h1>
-<h2 id="fresh_start"><code>fresh_start()</code></h2>
-<p><strong>Description</strong> Removes all the installed R packages (including base R) within an installation directory. Particularly useful when moving from an R version to another.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li><code>lib</code> (str): the directory where to remove the packages. Defaults to the first element in <code>.libPaths()</code></li>
-</ul>
-<h2 id="today_packages"><code>today_packages()</code></h2>
-<p><strong>Description</strong> Displays all the packages installed the day the function is called.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li><code>lib</code> (str): the directory where to display the packages. Defaults to the first element in <code>.libPaths()</code></li>
-</ul>
-<p><strong>Example</strong></p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/feddelegrand7/batata'>batata</a></span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/pkg/batata/man/today_packages.html'>today_packages</a></span><span class='op'>(</span><span class='op'>)</span>
-</code></pre>
-</div>
-<pre><code>[1] &quot;credentials&quot; &quot;gert&quot;        &quot;gh&quot;          &quot;gitcreds&quot;   
-[5] &quot;usethis&quot;     &quot;withr&quot;      </code></pre>
-</div>
-<h2 id="rm_today_packages"><code>rm_today_packages()</code></h2>
-<p><strong>Description</strong> Removes all the packages installed the day the function is called.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li><code>lib</code> (str): the directory where to remove the packages. Defaults to the first element in <code>.libPaths()</code></li>
-</ul>
-<h2 id="yesterday_packages"><code>yesterday_packages()</code></h2>
-<p><strong>Description</strong> Displays the packages installed <em>yesterday</em>.</p>
-<p><strong>Parameters</strong>:</p>
-<ul>
-<li><code>lib</code> (str): the directory where to display the packages. Defaults to the first element in <code>.libPaths()</code></li>
-</ul>
-<p><strong>Example</strong></p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/batata/man/yesterday_packages.html'>yesterday_packages</a></span><span class='op'>(</span><span class='op'>)</span>
-</code></pre>
-</div>
-<pre><code> [1] &quot;batata&quot;       &quot;blogdown&quot;     &quot;brms&quot;         &quot;clisymbols&quot;  
- [5] &quot;covr&quot;         &quot;distill&quot;      &quot;dplyr&quot;        &quot;gamm4&quot;       
- [9] &quot;ggplot2&quot;      &quot;httr&quot;         &quot;janitor&quot;      &quot;lintr&quot;       
-[13] &quot;optimx&quot;       &quot;projpred&quot;     &quot;rngtools&quot;     &quot;savonliquide&quot;
-[17] &quot;servr&quot;        &quot;shiny&quot;        &quot;thankr&quot;       &quot;xfun&quot;        </code></pre>
-</div>
-<h2 id="rm_yesterday_packages"><code>rm_yesterday_packages()</code></h2>
-<p><strong>Description</strong> Removes all the packages installed <em>yesterday</em>.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li><code>lib</code> (str): the directory where to remove the packages. Defaults to the first element in <code>.libPaths()</code></li>
-</ul>
-<h2 id="since_packages"><code>since_packages()</code></h2>
-<p><strong>Description</strong> Displays the packages installed according to a specific date.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li><code>date</code> (str): the considered date in <strong>yyyy-mm-dd</strong> format</li>
-<li><code>position</code> (str): whether to display the packages installed <code>at</code> that date, <code>before</code> or <code>after</code> that date.</li>
-<li><code>lib</code> (str): the directory where to display the packages. Defaults to the first element in <code>.libPaths()</code></li>
-</ul>
-<p><strong>Example</strong></p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#packages installed after the first of January 2021</span>
-<span class='fu'><a href='https://rdrr.io/pkg/batata/man/since_packages.html'>since_packages</a></span><span class='op'>(</span>date <span class='op'>=</span> <span class='st'>"2021-01-01"</span>, 
-               position <span class='op'>=</span> <span class='st'>"after"</span><span class='op'>)</span>
-</code></pre>
-</div>
-<pre><code> [1] &quot;batata&quot;       &quot;blogdown&quot;     &quot;brms&quot;         &quot;broom&quot;       
- [5] &quot;clisymbols&quot;   &quot;comtradr&quot;     &quot;covr&quot;         &quot;credentials&quot; 
- [9] &quot;dbplyr&quot;       &quot;distill&quot;      &quot;dplyr&quot;        &quot;gamm4&quot;       
-[13] &quot;gert&quot;         &quot;ggplot2&quot;      &quot;gh&quot;           &quot;gitcreds&quot;    
-[17] &quot;hms&quot;          &quot;httr&quot;         &quot;janitor&quot;      &quot;jsonlite&quot;    
-[21] &quot;lintr&quot;        &quot;lubridate&quot;    &quot;mongolite&quot;    &quot;optimx&quot;      
-[25] &quot;pillar&quot;       &quot;projpred&quot;     &quot;radous&quot;       &quot;ralger&quot;      
-[29] &quot;readr&quot;        &quot;rlang&quot;        &quot;rngtools&quot;     &quot;savonliquide&quot;
-[33] &quot;servr&quot;        &quot;shiny&quot;        &quot;thankr&quot;       &quot;tibble&quot;      
-[37] &quot;usethis&quot;      &quot;vctrs&quot;        &quot;withr&quot;        &quot;xfun&quot;        </code></pre>
-</div>
-<h2 id="rm_since_packages"><code>rm_since_packages()</code></h2>
-<p><strong>Description</strong> Works similarly to <code>since_packages()</code> excepts that it removes the packages instead of displaying them.</p>
-<p><strong>Parameters</strong> Same as <code>since_packages()</code></p>
-<h2 id="latest_packages"><code>latest_packages()</code></h2>
-<p><strong>Description</strong> Displays the latest installed packages.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li><p>n (num): the number of the last installed packages to display. Default to n = 1, in this case it will return the last installed package.</p></li>
-<li><p><code>lib</code> (str): the directory where to display the packages. Defaults to the first element in <code>.libPaths()</code></p></li>
-</ul>
-<p><strong>Example</strong></p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># 10 latest packages installed</span>
-<span class='fu'><a href='https://rdrr.io/pkg/batata/man/latest_packages.html'>latest_packages</a></span><span class='op'>(</span>n <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span>
-</code></pre>
-</div>
-<pre><code>      packages   modification_time
-1      usethis 2021-01-22 03:21:08
-2        withr 2021-01-22 03:21:08
-3           gh 2021-01-22 03:21:07
-4         gert 2021-01-22 03:21:07
-5     gitcreds 2021-01-22 03:21:07
-6  credentials 2021-01-22 03:21:07
-7     blogdown 2021-01-21 21:00:56
-8         xfun 2021-01-21 21:00:42
-9       batata 2021-01-21 20:26:03
-10     ggplot2 2021-01-21 19:47:37</code></pre>
-</div>
-<h2 id="rm_latest_packages"><code>rm_latest_packages()</code></h2>
-<p><strong>Description</strong> Works similarly to <code>rm_latest_packages()</code> excepts that it removes the packages instead of displaying them.</p>
-<p><strong>Parameters</strong> Same as <code>since_packages()</code></p>
-<!-- laaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaast -->
-<hr style = "border: solid 3px #FF4E5C; width:80%;">
-<h1 style="color:#24BFA5; text-align:center;">
-Packages Installation
-</h1>
-<h2 id="install_starred_cran"><code>install_starred_cran()</code></h2>
-<p><strong>Description</strong> Installs the latest CRAN-available R packages starred on Github.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li><code>github_user</code> (str): the Github user name</li>
-<li><code>n</code> (num): the last <code>n</code> starred repositories. Defaults to 5, in which case the function will look for the last 5 starred repositories, filter R from non-R repos and install them if available on CRAN.</li>
-</ul>
-<p><strong>Example</strong> The following code chunk will look at the last 10 repositories that I have starred, filter out R repositories, and install them if available on CRAN:</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># my Github user name is 'feddelegrand7'</span>
-<span class='fu'><a href='https://rdrr.io/pkg/batata/man/install_starred_cran.html'>install_starred_cran</a></span><span class='op'>(</span>github_user <span class='op'>=</span> <span class='st'>'feddelegrand7'</span>, n <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p>Note that if the starred repo is not available on CRAN, <code>install_starred_cran()</code> will simply ignore it.</p>
-<h2 id="install_starred_github"><code>install_starred_github()</code></h2>
-<p><strong>Description</strong> <code>install_starred_github()</code> behaves the same way as <code>install_starred_cran()</code> except that it will install the repositories from Github (not from CRAN), so that you can install packages that are not available on CRAN.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li><code>github_user</code> (str): the Github user name</li>
-<li><code>n</code> (num): the last <code>n</code> starred repositories. Defaults to 5, in which case the function will look for the last 5 starred repositories, filter R from non-R repos and install them</li>
-<li><code>upgrade</code> (str): whether to upgrade or not out of date packages. You can choose from ‘always’ or ‘never’. Defaults to ‘never’. For more info, see <code>install_github()</code> from the <code>remote</code> package.</li>
-</ul>
-<p><strong>Example</strong> The following code chunk will look at the last five repositories that I have starred, extract R repositories (in case some starred repositories belong to another programming language) and install them:</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/batata/man/install_starred_github.html'>install_starred_github</a></span><span class='op'>(</span>github_user <span class='op'>=</span> <span class='st'>'feddelegrand7'</span>, 
-                       n <span class='op'>=</span> <span class='fl'>5</span>, 
-                       upgrade <span class='op'>=</span> <span class='st'>"never"</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<h2 id="install_most_starred"><code>install_most_starred()</code></h2>
-<p><strong>Description</strong> Allows you the install the most starred CRAN packages that are available on Github. It takes one argument <code>n</code> which specifies the number of the most starred R packages (in descending order) that one wants to install.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li><code>n</code>: the number of most starred CRAN packages (in descending order). Defaults to 10, in which case the function will look at the 10 most starred R repositories and install them if available on CRAN.</li>
-</ul>
-<p><strong>Example</strong> The following code chunk will look for the 10 most starred R repositories and will install them if available on CRAN. Of course, it will ignore R repositories that are not packages, (e.g R4DS repo):</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/batata/man/install_most_starred.html'>install_most_starred</a></span><span class='op'>(</span>n <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
 <h2 id="code-of-conduct">Code of Conduct</h2>
 <p>Please note that the batata project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

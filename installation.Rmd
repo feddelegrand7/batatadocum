@@ -1,0 +1,93 @@
+---
+title: "Packages Installation"
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+## `display_starred()`
+
+__Description__
+Display User's Github Starred Repositories.
+
+__Parameters__
+
+- `github_user` (str): the Github user name to look for
+- `n` (num): the number of the last starred repositories. Defaults to 5 in which case
+it will return the last 5 starred repositories. Note that if the  `onlyR` parameter
+is set to TRUE, you might get a lower number of starred repos due to filtering R from
+all the other languages.
+- `onlyR` (lgl): whether to fetch only R repositories, Default to FALSE
+
+
+```{r}
+library(batata)
+
+display_starred('hadley', n = 20, onlyR = FALSE)
+```
+
+## `install_starred_cran()`
+
+__Description__
+Installs the latest CRAN-available R packages starred on Github. 
+
+__Parameters__
+
+- `github_user` (str): the Github user name to look for
+- `n` (num): the last `n` starred repositories. Defaults to 5, in which case the function will look for the last 5 starred repositories, filter R from non-R repos and install them if available on CRAN.
+
+__Example__
+The following code chunk will look at the last 10 repositories that I have starred, filter out R repositories, and install them if available on CRAN: 
+
+
+```{r, eval=FALSE}
+# my Github user name is 'feddelegrand7'
+install_starred_cran(github_user = 'feddelegrand7', n = 10)
+```
+
+Note that if the starred repo is not available on CRAN, `install_starred_cran()` will simply ignore it.
+
+## `install_starred_github()`
+
+__Description__
+`install_starred_github()` behaves the same way as `install_starred_cran()` except that it will install the repositories from Github (not from CRAN), so that you can install packages that are not available on CRAN.
+
+__Parameters__
+
+- `github_user` (str): the Github user name to look for
+- `n` (num): the last `n` starred repositories. Defaults to 5, in which case the function will look for the last 5 starred repositories, filter R from non-R repos and install them
+- `upgrade` (str): whether to upgrade or not out of date packages. You can choose from 'always' or 'never'. Defaults to 'never'. For more info, see `install_github()` from the `remote` package.
+
+__Example__
+The following code chunk will look at the last five repositories that I have starred, extract R repositories (in case some starred repositories belong to another programming language) and install them:
+
+```{r, eval=FALSE}
+install_starred_github(github_user = 'feddelegrand7', 
+                       n = 5, 
+                       upgrade = "never")
+```
+
+## `install_most_starred()`
+
+__Description__
+Allows you the install the most starred CRAN packages that are available on Github. It takes one argument `n` which specifies the number of the most starred R packages (in descending order) that one wants to install.
+
+__Parameters__
+
+- `n`: the number of most starred CRAN packages (in descending order). Defaults to 10, in which case the function will look at the 10 most starred R repositories and install them if available on CRAN.
+
+
+__Example__
+The following code chunk will look for the 10 most starred R repositories and will install them if available on CRAN. Of course, it will ignore R repositories that are not packages, (e.g R4DS repo):
+
+```{r, eval=FALSE}
+install_most_starred(n = 10)
+```
+
