@@ -26,11 +26,29 @@ is set to TRUE, you might get a lower number of starred repos due to filtering R
 all the other languages.
 - `onlyR` (lgl): whether to fetch only R repositories, Default to FALSE
 
+__Example__
 
 ```{r}
 library(batata)
 
 display_starred('hadley', n = 20, onlyR = FALSE)
+```
+
+## `display_most_starred()`
+
+__Description__
+Display the most starred R Github Repositories
+
+__Parameters__
+
+- `github_user` (str): the Github user name to look for
+- `n` (num): the number of most starred  Github R repositories to fetch.
+Defaults to 10.
+
+__Example__
+
+```{r}
+batata::display_most_starred(n = 10)
 ```
 
 ## `install_starred_cran()`
