@@ -1,5 +1,6 @@
 name: "batatadocum"
 title: "batata"
+theme: theme.css
 description: |
   A Toolbox for Managing R Packages Installation and Removal.
 output_dir: "_site"
