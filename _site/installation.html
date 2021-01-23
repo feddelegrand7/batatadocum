@@ -2086,6 +2086,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3>Contents</h3>
 <ul>
 <li><a href="#display_starred"><code>display_starred()</code></a></li>
+<li><a href="#display_most_starred"><code>display_most_starred()</code></a></li>
 <li><a href="#install_starred_cran"><code>install_starred_cran()</code></a></li>
 <li><a href="#install_starred_github"><code>install_starred_github()</code></a></li>
 <li><a href="#install_most_starred"><code>install_most_starred()</code></a></li>
@@ -2100,6 +2101,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><code>n</code> (num): the number of the last starred repositories. Defaults to 5 in which case it will return the last 5 starred repositories. Note that if the <code>onlyR</code> parameter is set to TRUE, you might get a lower number of starred repos due to filtering R from all the other languages.</li>
 <li><code>onlyR</code> (lgl): whether to fetch only R repositories, Default to FALSE</li>
 </ul>
+<p><strong>Example</strong></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/feddelegrand7/batata'>batata</a></span><span class='op'>)</span>
@@ -2114,6 +2116,25 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 [13] &quot;rcppcctz&quot;            &quot;cctz&quot;                &quot;shinyTree&quot;          
 [16] &quot;ReadStat&quot;            &quot;r2d3&quot;                &quot;appdirs&quot;            
 [19] &quot;pkgdown&quot;             &quot;reasoned-schemer&quot;   </code></pre>
+</div>
+<h2 id="display_most_starred"><code>display_most_starred()</code></h2>
+<p><strong>Description</strong> Display the most starred R Github Repositories</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>github_user</code> (str): the Github user name to look for</li>
+<li><code>n</code> (num): the number of most starred Github R repositories to fetch. Defaults to 10.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>batata</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/batata/man/display_most_starred.html'>display_most_starred</a></span><span class='op'>(</span>n <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code> [1] &quot;ggplot2&quot;                  &quot;awesome-R&quot;               
+ [3] &quot;shiny&quot;                    &quot;dplyr&quot;                   
+ [5] &quot;ML_for_Hackers&quot;           &quot;swirl_courses&quot;           
+ [7] &quot;AnomalyDetection&quot;         &quot;r4ds&quot;                    
+ [9] &quot;bookdown&quot;                 &quot;awesome-network-analysis&quot;</code></pre>
 </div>
 <h2 id="install_starred_cran"><code>install_starred_cran()</code></h2>
 <p><strong>Description</strong> Installs the latest CRAN-available R packages starred on Github.</p>
@@ -2161,7 +2182,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </code></pre>
 </div>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

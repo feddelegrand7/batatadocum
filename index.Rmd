@@ -10,9 +10,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, out.width= "50%", out.height="50%", fig.align='center'}
 
-knitr::include_graphics("carbon.png")
+knitr::include_graphics("hex.png")
 
 
 ```
